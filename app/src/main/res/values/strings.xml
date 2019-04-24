@@ -12,5 +12,6 @@
     <string name="Nickname">Nombre de usuario</string>
     <string name="Contrasena">Contraseña</string>
     <string name="cuenta">Cuenta</string>
+    <string name="signOut">Salir</string>
 
 </resources>

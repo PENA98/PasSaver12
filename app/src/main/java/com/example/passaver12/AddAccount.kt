@@ -34,14 +34,12 @@ class AddAccount : AppCompatActivity() {
         val tvServicio = findViewById<TextView>(R.id.etServicio)
         val tvNickname = findViewById<TextView>(R.id.etNickName2)
         val tvContrasena = findViewById<TextView>(R.id.etContrasena2)
-        val tvConfirmarContrasena = findViewById<TextView>(R.id.etConfirmarContrasena)
+
 
         btnAddAccount.setOnClickListener{
             val servicio = tvServicio.text
-            val contrasena = tvContrasena.text
-            val contrasenaConfirm = tvConfirmarContrasena.text
             if(servicio.isNotEmpty()){
-                if(contrasena != contrasenaConfirm){
+                if(etContrasena2.text.toString() == etConfirmarContrasena.text.toString()){
                     val account = Account(id,servicio.toString(), tvNickname.text.toString(), tvContrasena.text.toString())
                     saveAccount(account)
                 }

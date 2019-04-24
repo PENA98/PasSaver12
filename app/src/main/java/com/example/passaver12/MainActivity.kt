@@ -41,7 +41,16 @@ class MainActivity : AppCompatActivity() {
                 .addOnFailureListener{
                         e -> Toast.makeText(this@MainActivity, e.message, Toast.LENGTH_SHORT).show()
                 }
+
+
         }
+
+        imageView1.setOnClickListener{
+            finish()
+        }
+
+
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

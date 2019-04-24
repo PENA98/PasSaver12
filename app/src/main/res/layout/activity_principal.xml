@@ -8,6 +8,8 @@
         tools:context=".Principal">
 
     <androidx.recyclerview.widget.RecyclerView
+            android:clipToPadding="false"
+            android:paddingBottom="60dp"
             android:layout_width="391dp"
             android:layout_height="663dp"
             app:layout_constraintStart_toStartOf="parent"

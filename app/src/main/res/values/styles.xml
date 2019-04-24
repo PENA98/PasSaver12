@@ -9,7 +9,8 @@
     </style>
 
     <style name="MiTema" parent="AppTheme">
-        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowBackground">@drawable/background</item>
+
     </style>
 
 </resources>
