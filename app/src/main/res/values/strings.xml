@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">PasSaver 1.2</string>
+    <string name="facebook_application_id" translatable="false">2104086916369037</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb2104086916369037</string>
+    <string name="AgregarCuenta">Agregar cuenta</string>
+    <string name="HintServicio">Nombre del servicio</string>
+    <string name="HintNickname">Nombre de usuario</string>
+    <string name="HintContrasena">Contraseña</string>
+    <string name="HintConfirmarContrasena">Confirmar contraseña</string>
+    <string name="Volver">Volver</string>
+    <string name="servicio">Servicio</string>
+    <string name="Nickname">Nombre de usuario</string>
+    <string name="Contrasena">Contraseña</string>
+    <string name="cuenta">Cuenta</string>
+
+</resources>
