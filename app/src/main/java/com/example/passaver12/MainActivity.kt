@@ -14,6 +14,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+    //Definimos nuestras variables
     lateinit var providers : List<AuthUI.IdpConfig>
     private val MY_REQUEST_CODE: Int = 777
 
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-
+    //En esta funcion nos loggeamos utilizando Firebase
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == MY_REQUEST_CODE){
@@ -63,7 +64,8 @@ class MainActivity : AppCompatActivity() {
 
                 btn_sign_out.isEnabled = true
                 val intent = Intent(this, Principal::class.java)
-                intent.putExtra("IdUser", user!!.uid)
+                //Le pasamos los datos al intent
+                intent.putExtra("IdUser", user.uid)
                 startActivity(intent)
             }
             else
@@ -74,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
+    // Nos muestra las opciones de inicio de sesion al iniciar la aplicacion
     private fun showSignInOptions() {
         startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder()
             .setAvailableProviders(providers)

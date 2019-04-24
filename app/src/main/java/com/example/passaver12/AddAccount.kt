@@ -7,10 +7,10 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.passaver12.Models.Account
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_add_account.*
+import kotlinx.android.synthetic.main.activity_add_account.etConfirmarContrasena as etConfirmarContrasena1
 
 class AddAccount : AppCompatActivity() {
 
@@ -39,7 +39,7 @@ class AddAccount : AppCompatActivity() {
         btnAddAccount.setOnClickListener{
             val servicio = tvServicio.text
             if(servicio.isNotEmpty()){
-                if(etContrasena2.text.toString() == etConfirmarContrasena.text.toString()){
+                if(etContrasena2.text.toString().equals(this.etConfirmarContrasena1.text.toString())){
                     val account = Account(id,servicio.toString(), tvNickname.text.toString(), tvContrasena.text.toString())
                     saveAccount(account)
                 }

@@ -3,7 +3,6 @@ package com.example.passaver12
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.widget.Toast
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,6 +27,7 @@ class Principal : AppCompatActivity() {
 
         val objetoIntent: Intent = intent
         val id = objetoIntent.getStringExtra("IdUser")
+        //id del usuario loggeado
         iduser = id
 
         accountDBRef = store.collection("cuenta")
@@ -53,14 +53,14 @@ class Principal : AppCompatActivity() {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
         })
-
+        //cambiamos las propiedades de nuestro RecyclerView
         rvCuentas.setHasFixedSize(true)
         rvCuentas.layoutManager = layoutManager
         rvCuentas.itemAnimator = DefaultItemAnimator()
         rvCuentas.adapter = adapter
 
         getAccountFromDb()
-
+        //Click listener para agregar una nueva cuenta
         fabAgregarCuenta.setOnClickListener{
 
             val intent = Intent(this, AddAccount::class.java)
@@ -72,7 +72,7 @@ class Principal : AppCompatActivity() {
     }
 
     private fun getAccountFromDb() {
-
+        //Query de consulta a Firebase Firestore Con una clausula Where para traer los datos de usuario loggeado y no todos
         accountDBRef.whereEqualTo("userID", "$iduser").addSnapshotListener(object : EventListener<QuerySnapshot>{
             override fun onEvent(snapshot: QuerySnapshot?, exception: FirebaseFirestoreException?) {
                 exception?.let{
